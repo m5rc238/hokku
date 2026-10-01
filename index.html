@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hokku — questions</title>
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --fg: #e8e6e1;
+      --muted: #8a8781;
+      --rule: #26262a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ---- header ---- */
+
+    .site {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .mark {
+      position: relative;
+      width: clamp(7.5rem, 20vw, 11rem);
+      aspect-ratio: 598 / 498;
+      margin-bottom: 2.25rem;
+    }
+
+    .mark::before {
+      content: "";
+      position: absolute;
+      inset: -18% -14%;
+      background: radial-gradient(
+        closest-side,
+        rgba(232, 230, 225, 0.13),
+        rgba(232, 230, 225, 0) 70%
+      );
+      pointer-events: none;
+    }
+
+    .mark img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: screen;
+      filter: blur(0.5px);
+    }
+
+    .mark img.glow {
+      filter: blur(26px);
+      opacity: 0.32;
+    }
+
+    .mark img.crisp {
+      opacity: 0.94;
+      -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    }
+
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0.85rem 0 0;
+    }
+
+    /* ---- questions ---- */
+
+    .questions {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .questions li {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .index {
+      flex: 0 0 auto;
+      width: 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding-top: 0.35rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .q {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    .q em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .docs {
+      display: inline-block;
+      margin-top: 0.7rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site">
+      <div class="mark">
+        <img class="glow" src="assets/frogleap.png" alt="">
+        <img class="crisp" src="assets/frogleap.png" alt="">
+      </div>
+      <h1>Hokku</h1>
+      <p class="tagline">A log of open questions. Notes to follow.</p>
+    </header>
+
+    <main>
+      <ol class="questions">
+        <li>
+          <span class="index">01</span>
+          <div>
+            <p class="q">
+              How do we encode human judgment, evidence, context, standards,
+              uncertainty and quality criteria so an agent can make
+              <em>better</em> decisions?
+            </p>
+            <span class="docs">docs — soon</span>
+          </div>
+        </li>
+        <li>
+          <span class="index">02</span>
+          <div>
+            <p class="q">
+              When should an AI system make a fast judgment, when should it
+              retrieve more evidence, when should it reason longer, and when
+              should it refuse to decide?
+            </p>
+            <span class="docs">docs — soon</span>
+          </div>
+        </li>
+        <li>
+          <span class="index">03</span>
+          <div>
+            <p class="q">
+              What important human cognitive work is repeatedly performed but has
+              not yet become a <em>software primitive</em>?
+            </p>
+            <span class="docs">docs — soon</span>
+          </div>
+        </li>
+        <li>
+          <span class="index">04</span>
+          <div>
+            <p class="q">
+              What important human cognitive work does software still fail to
+              represent properly?
+            </p>
+            <span class="docs">docs — soon</span>
+          </div>
+        </li>
+      </ol>
+    </main>
+  </div>
+</body>
+</html>
